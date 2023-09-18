@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <script type="text/javascript" src="PrimeNumber.js"></script>
+    <script type="text/javascript" src="GCD.js"></script>
+    <script type="text/javascript" src="Fibonacci.js"></script>
+    <script type="text/javascript" src="Sum.js"></script>
+    <script type="text/javascript" src="QuickSort.js"></script>
+    <script type="text/javascript" src="WholeNumbers.js"></script>
+  </head>
+  <body>
+    <script>
+      function app() {
+        let choice = prompt(`Choose an option:
+        1 - Prime Number
+        2 - Sum
+        3 - Fibonacci
+        4 - GCD
+        5 - QuickSort
+        6 - Whole Number Count
+        0 - Exit`);
+
+        //Prime Number
+        if (choice == 1) {
+          alert("You chose option " + choice + ".");
+          let input = prompt("Enter a number: ");
+          alert("You entered the following number: " + input);
+          alert("Result: The number " + input + " " + (isPrime(input) ? "is Prime." : "is not Prime."));
+        }
+
+        //Sum
+        else if (choice == 2) {
+          alert("You chose option " + choice + ".");
+          let input = prompt("Enter integers separated by spaces: ");
+          let strNumbers = input.split(" ");
+
+          let numbers = strNumbers.map((value) => {
+            return parseInt(value);
+          });
+
+          alert("You entered the following numbers: \n" + numbers);
+          alert("Result: The sum of these numbers is " + sumArray(numbers));
+        }
+
+        //Fibonacci
+        else if (choice == 3) {
+          alert("You chose option " + choice + ".");
+          let input = prompt("Enter a number: ");
+          alert("You entered the following number: " + input);
+          alert("Result: The term " + input + " of the Fibonacci sequence is: " + calculateFibonacci(input) + ".");
+        }
+
+        //GCD
+        else if (choice == 4) {
+          alert("You chose option " + choice + ".");
+          let input1 = prompt("Enter the first number: ");
+          let input2 = prompt("Enter the second number: ");
+          alert("You entered the following numbers: \n" + input1 + " and " + input2);
+          alert("Result: The GCD of " + input1 + " and " + input2 + " is " + calculateGCD(input1, input2) + ".");
+        }
+
+        //QuickSort
+        else if (choice == 5) {
+          alert("You chose option " + choice + ".");
+          let input = prompt("Enter integers separated by spaces: ");
+          let strNumbers = input.split(" ");
+
+          let numbers = strNumbers.map((value) => {
+            return parseInt(value);
+          });
+
+          alert("You entered the following numbers: \n" + numbers);
+          quickSort(numbers);
+          alert("Result: Here's the quicksorted list: \n" + numbers);
+        }
+
+        //Whole Number Count
+        else if (choice == 6) {
+          alert("You chose option " + choice + ".");
+          let input = prompt("Enter integers separated by spaces: ");
+          let strNumbers = input.split(" ");
+
+          let numbers = strNumbers.map((value) => {
+            return parseInt(value);
+          });
+
+          alert("You entered the following numbers: \n" + numbers);
+
+          alert("Result: The total count of whole numbers is " + countWholeNumbers(numbers) + ".");
+        }
+
+        //Exit
+        else if (choice == 0) {
+          alert("Exiting the program.");
+        }
+
+        //Error
+        else {
+          alert("Invalid choice. Please select a valid option.");
+        }
+      }
+
+      app();
+    </script>
+  </body>
+</html>
